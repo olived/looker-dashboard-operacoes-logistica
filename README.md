@@ -61,7 +61,7 @@ Users can interact with the dashboard using:
 ## 🖼️ Screenshot
 
 <p align="center">
-  <img src="imagens/dashboard_operacoes_logistica" alt="Logistics Dashboard" width="800">
+  <img src="imagens/dashboard_operacoes_logistica.png.png" alt="Logistics Dashboard" width="800">
 </p>
 
 ---
@@ -92,5 +92,6 @@ _Data & Analytics Consultant | BI | ETL | Cloud | Python_
 ---
 
 ## 📂 Repository Structure
+
 
 

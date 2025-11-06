@@ -1,75 +1,89 @@
-# 🧾 Processamento de Arquivos CERC – Recusas e Reprocessamento
+# 🚚 Logistics & Operations Dashboard – Looker Studio
 
-Este projeto automatiza o **tratamento de arquivos de retorno (.ret)** da **CERC (Central de Recebíveis)** e prepara arquivos de **reprocessamento** com o mesmo layout original.  
-A solução foi desenvolvida em **Python**, com foco em **automação de ETL, padronização de dados e geração de arquivos consistentes** para reenvio em processos corporativos.
-
----
-
-## 📌 Sumário
-- [📌 Contexto](#-contexto)
-- [🚀 Funcionalidades](#-funcionalidades)
-- [🧠 Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [📂 Estrutura do Projeto](#-estrutura-do-projeto)
-- [⚙️ Como Usar](#️-como-usar)
-- [📝 Exemplos de Saída](#-exemplos-de-saída)
-- [📊 Fluxo de Processamento](#-fluxo-de-processamento)
-- [📌 Próximos Passos](#-próximos-passos)
-- [✍️ Autor](#️-autor)
-- [📝 Licença](#-licença)
+This project presents an interactive dashboard built in **Google Looker Studio** to analyze logistics performance, delivery volume, operational costs, and carrier efficiency over time.
 
 ---
 
-## 📌 Contexto
+## 🎯 Objective
 
-Durante o processamento diário de arquivos CERC, alguns registros podem ser **recusados** por inconsistências cadastrais ou de negócio.  
-Essas recusas precisam ser analisadas e **reprocessadas com o mesmo layout original**, garantindo que o arquivo esteja pronto para nova carga no ambiente de destino.
+The goal of this dashboard is to provide a clear and data-driven view of delivery operations, allowing business users to:
 
-Este projeto substitui o trabalho manual por uma automação completa em Python, capaz de processar **diversos pares de arquivos (Recebido + Retorno)** de forma rápida e padronizada 🧠⚡
-
----
-
-## 🚀 Funcionalidades
-
-✅ Leitura automática dos arquivos de **entrada (Recebido)** e **retorno (.ret)**  
-✅ Identificação dinâmica do **tipo de layout (SEG001 / SEG002 / SEG007 / SEG008)**  
-✅ Tratamento especial para **SEG007** (chave pelo campo *Nº Documento*)  
-✅ Geração de múltiplos arquivos de saída:
-- `*_RECUSADOS_ENCONTRADOS.csv` → registros localizados e validados  
-- `*_MOTIVO_RECUSA.csv` → ID, situação, documento e mensagem de erro  
-- `*.csv` (layout original) → pronto para reprocessamento  
-✅ Validação automática do cabeçalho (garante compatibilidade com o layout original)  
-✅ Exibição de resumo no terminal com contagem de registros, recusas e apólices distintas  
-✅ Processamento **em lote** de múltiplos arquivos com um único comando  
+- Monitor delivery **volume and costs**
+- Track the **average delivery time**
+- Measure the **on-time delivery rate**
+- Compare performance across different **carriers**
 
 ---
 
-## 🧠 Tecnologias Utilizadas
+## 📊 Key Metrics
 
-- 🐍 **Python 3.13**
-- 📊 **Pandas** — manipulação e limpeza de dados
-- 🧰 **Glob / OS** — varredura de diretórios
-- 📄 **OpenPyXL** — integração com planilhas (quando necessário)
-- ⚙️ **CSV** — formato padrão de entrada e saída
+| KPI | Description |
+|-----|--------------|
+| **Total Shipments** | Total number of deliveries in the selected period |
+| **Total Cost (R$)** | Total operational cost of shipments |
+| **Average Delivery Time** | Mean time between shipment and delivery |
+| **% On-Time Deliveries** | Percentage of deliveries completed within SLA |
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📈 Dashboard Overview
 
-```bash
-Corrections_Policies_Refused/
-├─ 📄 Process_All.py              # Script principal
-├─ 📄 README.md                   # Documentação do projeto
-├─ 📄 requirements.txt            # Dependências do ambiente
-├─ 📄 .gitignore                  # Itens ignorados no repositório
-│
-├─ 📂 exemplos/                   # Arquivos fictícios de exemplo
-│   ├─ CERC-SEG001_XXXX_20251003_XXXX.csv
-│   ├─ CERC-SEG001_XXXX_20251003_XXXX_ret.csv
-│
-├─ 📂 saida_exemplo/              # Arquivos de saída gerados pelo script
-│   ├─ CERC-SEG001_XXXX_20251003_XXXX_RECUSADOS_ENCONTRADOS.csv
-│   ├─ CERC-SEG001_XXXX_20251003_XXXX_ret_MOTIVO_RECUSA.csv
-│   ├─ CERC-SEG001_XXXX_20251003_XXXX_ret_RECUSADOS.csv
-│
-└─ 📂 docs/                       # Documentação e diagramas
-    └─ fluxo_processamento.png
+The dashboard contains three main visual sections:
+
+1. **Shipments by Carrier** – Bar chart comparing the number of deliveries by carrier.  
+2. **Delivery Volume by Date** – Line chart showing shipment trends over time (with moving average applied).  
+3. **Delivery Status Distribution** – Donut chart breaking down deliveries by status (delivered, delayed, in transit, canceled).
+
+---
+
+## 🧭 Filters
+
+Users can interact with the dashboard using:
+- **Carrier filter** (`transportadora`)
+- **Status filter** (`status`)
+- **Date range selector** (`data_envio`)
+
+---
+
+## 🧠 Insights
+
+- Helps identify which **carriers** have better on-time performance.  
+- Highlights periods with **delivery peaks or delays**.  
+- Enables quick tracking of **operational costs** and average delivery efficiency.  
+
+---
+
+## 🖼️ Screenshots
+
+| KPI Summary | Visualizations |
+|--------------|----------------|
+| ![Dashboard KPIs](imagens/kpis.png) | ![Charts](imagens/dashboard_geral.png) |
+
+---
+
+## 🧰 Tools & Technologies
+
+- **Google Looker Studio** – Data visualization and analytics  
+- **Google Sheets / CSV** – Data source  
+- **Dataset fields:** `data_envio`, `data_entrega`, `transportadora`, `status`, `custo`, `prazo_dias`, etc.
+
+---
+
+## 🔗 Live Dashboard
+
+👉 [**View the dashboard in Looker Studio**](https://lookerstudio.google.com/reporting/1e8dc6c4-17dc-470e-af61-d90ab20dd432)
+
+---
+
+## 🧑‍💻 Author
+
+**Daniel Gomes de Oliveira**  
+Data & Analytics Consultant | BI | ETL | Cloud | Python  
+📍 São Paulo, Brazil  
+💼 [Upwork Profile](https://www.upwork.com/) *(add your link if you want)*  
+🏆 “Data-driven insights for smarter decisions.”
+
+---
+
+## 📂 Repository Structure
+

@@ -1,4 +1,8 @@
-# 🚚 Logistics & Operations Dashboard – Looker Studio
+# 🚛 Logistics & Operations Dashboard – Looker Studio
+
+![Status](https://img.shields.io/badge/status-completed-brightgreen)
+![Tool](https://img.shields.io/badge/Google%20Looker%20Studio-blue)
+![Language](https://img.shields.io/badge/Language-English-lightgrey)
 
 This project presents an interactive dashboard built in **Google Looker Studio** to analyze logistics performance, delivery volume, operational costs, and carrier efficiency over time.
 
@@ -18,7 +22,7 @@ The goal of this dashboard is to provide a clear and data-driven view of deliver
 ## 📊 Key Metrics
 
 | KPI | Description |
-|-----|--------------|
+| --- | --- |
 | **Total Shipments** | Total number of deliveries in the selected period |
 | **Total Cost (R$)** | Total operational cost of shipments |
 | **Average Delivery Time** | Mean time between shipment and delivery |
@@ -39,25 +43,26 @@ The dashboard contains three main visual sections:
 ## 🧭 Filters
 
 Users can interact with the dashboard using:
-- **Carrier filter** (`transportadora`)
-- **Status filter** (`status`)
+
+- **Carrier filter** (`transportadora`)  
+- **Status filter** (`status`)  
 - **Date range selector** (`data_envio`)
 
 ---
 
-## 🧠 Insights
+## 💡 Insights
 
-- Helps identify which **carriers** have better on-time performance.  
-- Highlights periods with **delivery peaks or delays**.  
-- Enables quick tracking of **operational costs** and average delivery efficiency.  
+- Identify which **carriers** have better on-time performance.  
+- Highlight periods with **delivery peaks or delays**.  
+- Enable quick tracking of **operational costs** and **average delivery efficiency**.  
 
 ---
 
-## 🖼️ Screenshots
+## 🖼️ Screenshot
 
-| KPI Summary | Visualizations |
-|--------------|----------------|
-| ![Dashboard KPIs](imagens/kpis.png) | ![Charts](imagens/dashboard_geral.png) |
+<p align="center">
+  <img src="imagens/dashboard_operacoes_logistica.png" alt="Logistics Dashboard" width="800">
+</p>
 
 ---
 
@@ -65,7 +70,7 @@ Users can interact with the dashboard using:
 
 - **Google Looker Studio** – Data visualization and analytics  
 - **Google Sheets / CSV** – Data source  
-- **Dataset fields:** `data_envio`, `data_entrega`, `transportadora`, `status`, `custo`, `prazo_dias`, etc.
+- **Dataset fields:** `data_envio`, `data_entrega`, `transportadora`, `status`, `custo`, `prazo_dias`, etc.  
 
 ---
 
@@ -75,13 +80,14 @@ Users can interact with the dashboard using:
 
 ---
 
-## 🧑‍💻 Author
+## 👤 Author
 
 **Daniel Gomes de Oliveira**  
-Data & Analytics Consultant | BI | ETL | Cloud | Python  
+_Data & Analytics Consultant | BI | ETL | Cloud | Python_  
 📍 São Paulo, Brazil  
-💼 [Upwork Profile](https://www.upwork.com/) *(add your link if you want)*  
-🏆 “Data-driven insights for smarter decisions.”
+
+💼 [Upwork Profile](#)  
+“Data-driven insights for smarter decisions.”
 
 ---
 
